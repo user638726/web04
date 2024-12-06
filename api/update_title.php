@@ -1,6 +1,6 @@
 <?php 
 include_once "db.php";
-
+//判斷是否存在
 if(!isset($_POST['id'])){
  exit();
 }
