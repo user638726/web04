@@ -1,6 +1,6 @@
 <h3 class="cent">更新動畫區圖片</h3>
 <hr>
-<form action="api/update_title.php" method="post" enctype="multipart/form-data">
+<form action="api/update_mvim.php" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>動畫區圖片：</td>
