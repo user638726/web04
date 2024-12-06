@@ -8,7 +8,7 @@ if(isset($_POST['id'])){
         }else{
             $row=$Title->find($id);
             $row['text']=$_POST['text'][$idx];
-            $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id);
+            $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
             $Title->save($row);
         }
     }
