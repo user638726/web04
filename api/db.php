@@ -144,7 +144,7 @@ function dd($array){
        print_r($array);
        echo "<pre>";
      } 
-       $DEPT=new DB('imgs');
+       $DEPT=new DB('img');
        //$dept=$DEPT->q("SELECT * FROM imgs");
        //$dept=$DEPT->all();
        //$DEPT->del(5);
