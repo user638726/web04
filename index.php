@@ -23,7 +23,7 @@
     </div>
    
     <div id="main">
-    <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index.php">
+        <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index.php">
             
             <div class="ti" style="background:url('./upload/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
             <!--標題-->
@@ -36,7 +36,7 @@
                 </div>
                 <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
                     <span class="t">進站總人數 :
-                        <?=$Total->find(1)['total'];?></span>
+                    <?=$Total->find(1)['total'];?></span>
                 </div>
             </div>
 			<?php
@@ -60,6 +60,30 @@
                     onclick="lo(&#39;?do=admin&#39;)">管理登入</button>
                 <div style="width:89%; height:480px;" class="dbor">
                     <span class="t botli">校園映象區</span>
+                    <div class='cent' id="up">
+                        <img src="./icon/up.jpg" alt="" srcset="">
+                    </div>
+                    <div class='cent'>
+                    <?php 
+                    $imgs=$Image->all(['sh'=>1]);
+                    foreach($imgs as $img){
+                        echo "<div>";
+                        echo "<img src='./upload/{$img['img']}' style='width:150px;height:103px;border:3px solid orange'>";
+                        echo "</div>";
+                    }
+
+
+                        ?>
+                    </div>
+                    <div class='cent' id="dn">
+                        <img src="./icon/dn.jpg" alt="">
+                    </div>
+
+
+
+
+
+
                     <script>
                     var nowpage = 0,
                         num = 0;
