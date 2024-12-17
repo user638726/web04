@@ -33,6 +33,31 @@
                 <div id="menuput" class="dbor">
                     <!--主選單放此-->
                     <span class="t botli">主選單區</span>
+                    <?php 
+                        $mains=$Menu->all(['sh'=>1,'main_id'=>0]);
+                        foreach($mains as $main){
+                            echo "<div class='mainmu cent'>";
+                            echo "<a href='{$main['href']}'>";
+                            echo $main['text'];
+                            echo "</a>";
+
+                            echo "<div class='mw'>";
+                            if($Menu->count(['main_id'=>$main['id']])>0){
+                                $subs=$Menu->all(['main_id'=>$main['id']]);
+                                foreach($subs as $sub){
+                                    echo "<div class='mainmu2 cent'>";
+                                    echo "<a href='{$sub['href']}'>";
+                                    echo $sub['text'];  
+                                    echo "</a>";
+                                    echo "</div>";
+                                }
+                            }
+                            echo "</div>";
+                            echo "</div>";
+                        }
+
+
+                    ?>
                 </div>
                 <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
                     <span class="t">進站總人數 :
@@ -82,7 +107,7 @@
                     var nowpage = 0,
                         num = <?=$Image->count(['sh'=>1]);?>;
 
-                        function pp(x) {
+                    function pp(x) {
                         var s, t;
                         if (x == 1 && nowpage - 1 >= 0) {
                             nowpage--;

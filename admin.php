@@ -1,4 +1,4 @@
-﻿﻿<?php include_once "api/db.php";?>
+﻿﻿﻿<?php include_once "api/db.php";?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0068)?do=admin&redo=title -->
@@ -25,7 +25,7 @@
     </div>
     <iframe style="display:none;" name="back" id="back"></iframe>
     <div id="main">
-        <a title="" href="index.php">
+        <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index.php">
             <div class="ti" style="background:url('./upload/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
             <!--標題-->
         </a>
@@ -37,6 +37,7 @@
                     <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=title">
                         <div class="mainmu">
                             網站標題管理 </div>
+                            
                     </a>
                     <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=ad">
                         <div class="mainmu">
@@ -75,7 +76,7 @@
                 </div>
                 <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
                     <span class="t">進站總人數 :
-                        <?=$Total->find(1)['total'];?></span>
+                    <?=$Total->find(1)['total'];?></span>
                 </div>
             </div>
             <?php
