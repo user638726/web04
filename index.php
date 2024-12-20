@@ -1,4 +1,5 @@
-<?php include_once "api/db.php";?>
+<?php include_once "api/db.php";
+session_start();?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0040)http://127.0.0.1/test/exercise/collage/? -->
@@ -81,8 +82,19 @@
 			?>
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
+                <?php 
+                    if(!isset($_SESSION['login'])){
+                ?>
                 <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
-                    onclick="lo(&#39;?do=admin&#39;)">管理登入</button>
+                    onclick="lo(&#39;?do=login&#39;)">管理登入</button>
+                <?php 
+                    }else{
+                ?>
+                    <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
+                    onclick="lo(&#39;admin.php&#39;)">返回管理</button>
+                <?php 
+                    }
+                ?>
                 <div style="width:89%; height:480px;" class="dbor">
                     <span class="t botli">校園映象區</span>
                     <div class='cent' id="up" onclick="pp(1)">
