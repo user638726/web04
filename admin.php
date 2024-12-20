@@ -1,5 +1,5 @@
 ﻿﻿﻿<?php include_once "api/db.php";
-session_start();
+
 if(!isset($_SESSION['login'])){
     echo "請從登入頁登入<a href='index.php?do=login'>管理登入</a>";
     exit();
@@ -31,7 +31,7 @@ if(!isset($_SESSION['login'])){
 			</div>
         </div>
     </div>
-    <iframe style="display:none;" name="back" id="back"></iframe>
+
     <div id="main">
         <a title="<?=$Title->find(['sh'=>1])['text'];?>" href="index.php">
             <div class="ti" style="background:url('./upload/<?=$Title->find(['sh'=>1])['img'];?>'); background-size:cover;"></div>
