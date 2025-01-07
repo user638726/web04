@@ -1,4 +1,4 @@
-﻿﻿﻿<?php include_once "api/db.php";
+﻿﻿<?php include_once "api/db.php";
 
 if(!isset($_SESSION['login'])){
     echo "請從登入頁登入<a href='index.php?do=login'>管理登入</a>";
