@@ -147,7 +147,7 @@ class DB{
 }
 
 function q($sql){
-    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db10",'root','');
+    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db02",'root','');
     return $pdo->query($sql)->fetchAll();
 }
 
