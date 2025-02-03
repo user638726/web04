@@ -125,7 +125,7 @@ class DB{
      * 取得多筆資料
      */
     protected function fetchAll($sql){
-        //echo $sql;
+       
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     
